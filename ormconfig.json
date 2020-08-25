@@ -1,0 +1,24 @@
+{
+   "type": "mysql",
+   "host": "31.170.161.43",
+   "port": 3306,
+   "username": "u695513924_clinica",
+   "password": "@Mhj197704",
+   "database": "u695513924_podologia",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "src/entity/**/*.ts"
+   ],
+   "migrations": [
+      "src/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "src/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+   }
+}
