@@ -37,8 +37,8 @@ module.exports = function(){
   });
 
   consign()
-   .include('controllers')
-   .then('persistencia')
+   .include('mhj-podologia/controllers')
+   .then('mhj-podologia/persistencia')
    .into(app);
 
   return app;
