@@ -1,6 +1,6 @@
 module.exports = function (app) {
 
-    app.get('/mensagens', function (req, res) {
+    app.get('mensagens', function (req, res) {
         console.log('Recebida requisicao de mensagens.')
         var connection = req.connection;
         var mensagemDao = new app.persistencia.MensagemDao(connection);
@@ -17,7 +17,7 @@ module.exports = function (app) {
           });
     });
 
-    app.post('/mensagem', function(req, res){
+    app.post('mensagem', function(req, res){
         console.log('Recebida requisicao de inclusao de mensagem.');
         console.log('body: ' + JSON.stringify(req.body));
         
