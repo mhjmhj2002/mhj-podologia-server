@@ -3,7 +3,7 @@ module.exports = function (app) {
     app.get('/mensagens', function (req, res) {
         console.log('Recebida requisicao de mensagens.')
         var connection = req.connection;
-        var mensagemDao = new app.persistencia.MensagemDao(connection);
+        var mensagemDao = new app.podologia.persistencia.MensagemDao(connection);
 
         mensagemDao.getAll(function(erro, resultado){
             if(erro){
@@ -26,7 +26,7 @@ module.exports = function (app) {
         var mensagem = req.body.mensagem;
 
         var connection = req.connection;
-        var mensagemDao = new app.persistencia.MensagemDao(connection);
+        var mensagemDao = new app.podologia.persistencia.MensagemDao(connection);
 
         mensagemDao.incluirMensagem(email, nome, mensagem, function(erro, resultado) {
             if(erro){
