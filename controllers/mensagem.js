@@ -1,6 +1,8 @@
 module.exports = function (app) {
+  
+  var cors = require('cors');
 
-    app.get('/mensagens', function (req, res) {
+    app.get('/mensagens', cors(), function (req, res) {
         console.log('Recebida requisicao de mensagens.')
         var connection = req.connection;
         var mensagemDao = new app.podologia.persistencia.MensagemDao(connection);
@@ -17,7 +19,7 @@ module.exports = function (app) {
           });
     });
 
-    app.post('/mensagem', function(req, res){
+    app.post('/mensagem', cors(), function(req, res){
         console.log('Recebida requisicao de inclusao de mensagem.');
         console.log('body: ' + JSON.stringify(req.body));
         
