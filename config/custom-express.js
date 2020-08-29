@@ -1,19 +1,21 @@
 var express = require('express');
+var cors = require('cors');
 var consign = require('consign');
 var bodyParser = require('body-parser');
-var expressValidator = require('express-validator');
+// var expressValidator = require('express-validator');
 var pool = require('./connectionFactory');
 var connectionMiddleware = require('./connection-middleware');
 
 module.exports = function(){
   var app = express();
+  app.use(cors());
     
   app.use(connectionMiddleware(pool));
 
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());
 
-  app.use(expressValidator());
+  // app.use(expressValidator());
   
   // Add headers
   app.use(function (req, res, next) {
