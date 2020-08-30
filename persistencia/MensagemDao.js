@@ -6,8 +6,8 @@ MensagemDao.prototype.getAll = function (callback) {
     this._connection.query("select * from mensagem",callback);
 }
 
-MensagemDao.prototype.incluirMensagem = function (email, nome, mensagem, callback) {
-    var query = "insert into mensagem (email, nome, mensagem) values ('" + email + "', '" + nome + "', '" + mensagem + "')";
+MensagemDao.prototype.incluirMensagem = function (email, nome, mensagem, titulo, callback) {
+    var query = "insert into mensagem (email, nome, mensagem, titulo) values ('" + email + "', '" + nome + "', '" + mensagem + "', '" + titulo + "')";
     console.log("query: " + query);
     this._connection.query(query,callback);
 }

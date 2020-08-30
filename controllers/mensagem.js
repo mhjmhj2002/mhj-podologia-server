@@ -26,11 +26,12 @@ module.exports = function (app) {
         var email = req.body.email;
         var nome = req.body.nome;
         var mensagem = req.body.mensagem;
+        var titulo = req.body.titulo;
 
         var connection = req.connection;
         var mensagemDao = new app.podologia.persistencia.MensagemDao(connection);
 
-        mensagemDao.incluirMensagem(email, nome, mensagem, function(erro, resultado) {
+        mensagemDao.incluirMensagem(email, nome, mensagem, titulo, function(erro, resultado) {
             if(erro){
               console.log('erro ao consultar no banco: ' + erro);
               res.status(500).send(erro);
